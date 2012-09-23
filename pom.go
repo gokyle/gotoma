@@ -54,21 +54,21 @@ func config() {
 }
 
 func doAPomodoro() {
-        event := fmt.Sprintf("starting pomodoro: %s", *task)
-        eventOut(event)
+	event := fmt.Sprintf("starting pomodoro: %s", *task)
+	eventOut(event)
 	<-time.After(pomodoro)
 	event = fmt.Sprintf("finished pomodoro: %s", *task)
-        eventOut(event)
+	eventOut(event)
 }
 
 func takeABreak() {
-        eventOut("starting break")
+	eventOut("starting break")
 	<-time.After(breakTime)
-        eventOut("break's over")
+	eventOut("break's over")
 }
 
 func eventOut(event string) {
 	go fmt.Println("[+] ", event)
-        go logEvent(event)
+	go logEvent(event)
 	speaker(event)
 }
