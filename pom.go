@@ -13,17 +13,17 @@ var (
 	nPomodoros  int
 	task        *string
 	shouldSpeak bool
-        logfile     string
+	logfile     string
 )
 
 func main() {
 	config()
-        for i := 0; i < nPomodoros; i++ {
-	        doAPomodoro()
-                if i < (nPomodoros - 1) {
-                    takeABreak()
-                }
-        }
+	for i := 0; i < nPomodoros; i++ {
+		doAPomodoro()
+		if i < (nPomodoros - 1) {
+			takeABreak()
+		}
+	}
 }
 
 func duration(n int) time.Duration {
@@ -42,24 +42,33 @@ func config() {
 	nPoms := flag.Int("n", 1, "How many pomodoros to do.")
 	task = flag.String("m", "new pomodoro",
 		"Name of the task being done")
-	fSpeak := flag.Bool("q", true, "Speak on new events.")
-        fLogf := flag.String("l", "", "Write to the given logfile.")
+	fSpeak := flag.Bool("q", false, "Don't speak on new events.")
+	fLogf := flag.String("l", "", "Write to the given logfile.")
 	flag.Parse()
 
 	pomodoro = duration(*pTime)
 	breakTime = duration(*bTime)
 	nPomodoros = *nPoms
-	shouldSpeak = *fSpeak
+	shouldSpeak = !(*fSpeak)
+	logfile = *fLogf
 }
 
 func doAPomodoro() {
-	speaker(fmt.Sprintf("starting %s", *task))
+        event := fmt.Sprintf("starting pomodoro: %s", *task)
+        eventOut(event)
 	<-time.After(pomodoro)
-	speaker(fmt.Sprintf("finished %s", *task))
+	event = fmt.Sprintf("finished pomodoro: %s", *task)
+        eventOut(event)
 }
 
 func takeABreak() {
-        speaker("starting break")
-        <-time.After(breakTime)
-        speaker("break is over!")
+        eventOut("starting break")
+	<-time.After(breakTime)
+        eventOut("break's over")
+}
+
+func eventOut(event string) {
+	go fmt.Println("[+] ", event)
+        go logEvent(event)
+	speaker(event)
 }

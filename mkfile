@@ -3,7 +3,7 @@ PREFIX=/usr/local
 TARGET=gopom
 MANPATH=${PREFIX}/man
 
-$TARGET:
+$TARGET:V:
     go get
     go build -x -v -o ${TARGET}
 
