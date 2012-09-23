@@ -1,0 +1,61 @@
+  __ _  ___  _ __   ___  _ __ ___  
+ / _` |/ _ \| '_ \ / _ \| '_ ` _ \ 
+| (_| | (_) | |_) | (_) | | | | | |
+ \__, |\___/| .__/ \___/|_| |_| |_|
+  __/ |     | |                    
+ |___/      |_|                    
+
+gopom: console based pomodoros
+
+gopom is a command line utility for doing pomodoros[1]. see the man page
+for more command line usage.
+
+
+DEPENDENCIES
+------------
+gopom is written in Go, so you need to have a working Go installation.
+it also uses the plan9 mk(1) system, which can be obtained from [2].
+
+
+TEXT-TO-SPEECH
+--------------
+the program looks for an executable file named "say" in the path, expecting
+that given the command line `say some text`, it will speak 'some text'.
+one is provided on os x; if you have festival (or don't mind installing
+festival), i've written a small 'say' program available from [3].
+
+
+INSTALLING
+----------
+to install to /usr/local:
+        mk && sudo mk install
+to remove:
+        sudo mk uninstall
+
+to install to ${HOME}:
+        mk install PREFIX=${HOME}
+to remove:
+        mk uninstall PREFIX=${HOME}
+
+
+AUTHOR
+------
+gopom was written by kyle isom <kyle@tyrfingr.is>.
+
+LICENSE
+-------
+gopom is released under a dual ISC / public domain license. see the
+LICENSE file for details.
+
+
+BUGS
+----
+the installer won't install the man page properly in some cases (e.g.
+os x). this is because those operating systems
+
+
+LINKS
+-----
+[1] http://www.pomodorotechnique.com
+[2] http://www.swtch.com/plan9port/unix
+[3] https://www.bitbucket.org/kisom/say
