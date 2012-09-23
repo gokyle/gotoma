@@ -1,19 +1,21 @@
-  __ _  ___  _ __   ___  _ __ ___  
- / _` |/ _ \| '_ \ / _ \| '_ ` _ \ 
-| (_| | (_) | |_) | (_) | | | | | |
- \__, |\___/| .__/ \___/|_| |_| |_|
-  __/ |     | |                    
- |___/      |_|                    
+             _                        
+            | |                       
+  __ _  ___ | |_ ___  _ __ ___   __ _ 
+ / _` |/ _ \| __/ _ \| '_ ` _ \ / _` |
+| (_| | (_) | || (_) | | | | | | (_| |
+ \__, |\___/ \__\___/|_| |_| |_|\__,_|
+  __/ |                               
+ |___/                                
 
-gopom: console based pomodoros
+gotma: console based pomodoros
 
-gopom is a command line utility for doing pomodoros[1]. see the man page
+gotma is a command line utility for doing pomodoros[1]. see the man page
 for more command line usage.
 
 
 DEPENDENCIES
 ------------
-gopom is written in Go, so you need to have a working Go installation.
+gotma is written in Go, so you need to have a working Go installation.
 it also uses the plan9 mk(1) system, which can be obtained from [2].
 
 
@@ -40,11 +42,11 @@ to remove:
 
 AUTHOR
 ------
-gopom was written by kyle isom <kyle@tyrfingr.is>.
+gotma was written by kyle isom <kyle@tyrfingr.is>.
 
 LICENSE
 -------
-gopom is released under a dual ISC / public domain license. see the
+gotma is released under a dual ISC / public domain license. see the
 LICENSE file for details.
 
 

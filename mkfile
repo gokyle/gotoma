@@ -1,6 +1,6 @@
 VERSION=1.0.0
 PREFIX=/usr/local
-TARGET=gopom
+TARGET=gotoma
 MANPATH=${PREFIX}/man
 
 $TARGET:V:
