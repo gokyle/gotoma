@@ -1,0 +1,64 @@
+.Dd $Mdocdate$
+.Dt GOTOMA 1
+.Os
+.Sh NAME
+.Nm gotoma
+.Nd command line pomodoros
+.Sh SYNOPSIS
+.Nm
+.Op Fl b Ar duration
+.Op Fl h
+.Op Fl l Ar logfile
+.Op Fl m Ar taskname
+.Op Fl n Ar num
+.Op Fl q
+.Op Fl t Ar duration
+.Sh DESCRIPTION
+.Nm
+is a command line utility for doing pomodoros
+.Sh USAGE
+Without any arguments, 
+.Nm
+will launch a single 25 minute pomodoro.
+
+FLAGS:
+.Bl -tag -width Ds
+.It Fl b Ar duration
+Specify the length of breaks in minutes. The default is 5 minutes.
+.It Fl h
+Print a help message (which also displays the default values for arguments)
+.It Fl l Ar logfile
+Specify a logfile to log to. If not present,
+.Nm
+won't log.
+.It Fl m Ar taskname
+Specify a name for the task being worked on.
+.It Fl n Ar num
+Specify the number of pomodoros to run.
+.It Fl q
+Do not speak events (pomodoros, breaks).
+.It Fl t Ar duration
+Specify the length of pomodoros in minutes. The default is 25 minutes.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh EXAMPLES
+Do four pomodoros for writing this manpage, speaking them and logging to 
+"pom.log":
+.Dl $ gotoma -n 4 -l pom.log -m "write manpage"
+.Sh AUTHORS
+.Nm
+was written by
+.An Kyle Isom Aq Mt kyle@tyrfingr.is .
+.Sh CAVEATS
+.Nm
+currently only supports short breaks (the pomodoro technique recommends
+that for every four pomodoros, you do one long break with short breaks
+in between the pomodoros).
+.\" .Sh BUGS
+.Sh LICENSE
+.Nm
+is released under a public domain / ISC dual license. The license is
+available
+.Lk http://www.tyrfingr.is/licenses/LICENSE.DUAL "online" ,
+
