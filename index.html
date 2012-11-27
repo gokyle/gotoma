@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Gotoma by gokyle</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Gotoma</h1>
+        <p>Command line pomodoro tool.</p>
+
+        <p class="view"><a href="https://github.com/gokyle/gotoma">View the Project on GitHub <small>gokyle/gotoma</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/gokyle/gotoma/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/gokyle/gotoma/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/gokyle/gotoma">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <pre><code>             _                        
+            | |                       
+  __ _  ___ | |_ ___  _ __ ___   __ _ 
+ / _` |/ _ \| __/ _ \| '_ ` _ \ / _` |
+| (_| | (_) | || (_) | | | | | | (_| |
+ \__, |\___/ \__\___/|_| |_| |_|\__,_|
+  __/ |                               
+ |___/                                
+</code></pre>
+
+<h2>gotoma: console based pomodoros</h2>
+
+<p><code>gotoma</code> is a command line utility for doing <a href="http://www.pomodorotechnique.com">pomodoros</a>. 
+see the man page for more command line usage.</p>
+
+<h2>DEPENDENCIES</h2>
+
+<p><code>gotoma</code> is written in Go, so you need to have a working Go installation.
+it also uses the <a href="http://www.swtch.com/plan9port/unix">plan9 mk(1) system</a>.</p>
+
+<h2>TEXT-TO-SPEECH</h2>
+
+<p>the program looks for an executable file named "say" in the path, expecting
+that given the command line <code>say some text</code>, it will speak 'some text'.
+one is provided on os x; if you have festival (or don't mind installing
+festival), i've written a small [<code>say</code> program].</p>
+
+<h2>INSTALLING</h2>
+
+<ul>
+<li>to install to /usr/local:
+<code>
+mk &amp;&amp; sudo mk install
+</code>
+</li>
+<li>
+<p>to remove:</p>
+
+<pre><code>sudo mk uninstall
+</code></pre>
+</li>
+<li>
+<p>to install to <code>${HOME}</code>:</p>
+
+<pre><code>mk install PREFIX=${HOME}
+</code></pre>
+</li>
+<li>
+<p>to remove:</p>
+
+<pre><code>mk uninstall PREFIX=${HOME}
+</code></pre>
+</li>
+</ul><h2>AUTHOR</h2>
+
+<p>gotma was written by <a href="http://gokyle.github.com/">kyle isom</a>.</p>
+
+<h2>LICENSE</h2>
+
+<p>gotma is released under a dual ISC / public domain license. see the
+<code>LICENSE</code> file for details.</p>
+
+<h2>BUGS</h2>
+
+<p>the installer won't install the man page properly in some cases (e.g.
+os x). this is ignored because os x ships with a <code>say</code> command.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/gokyle">gokyle</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
